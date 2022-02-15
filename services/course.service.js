@@ -10,7 +10,7 @@ class CourseService {
     }
     static async getCourseById(id){
         try{
-            return await courses.findOne(id);
+            return await courses.findById(id);
         }catch(err){
             throw err;
         }
