@@ -13,7 +13,7 @@ exports.loginValidator = [
 ]
 exports.registerValidator = [
     body("name"),
-    body("phone").isMobilePhone("en-IN").withMessage("Incorrect Phone Number"),
+    body("phone"),
     body("email").isEmail().withMessage("Invalid Email"),
     body("password").isStrongPassword().withMessage("Weak Password"),
     async(req, res, next) =>{
