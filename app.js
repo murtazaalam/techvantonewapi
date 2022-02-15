@@ -5,10 +5,12 @@ const connect = require('./config/db.config');
 const authRoutes = require('./routes/auth.routes');
 const mainRoutes = require('./routes/main.routes');
 
+const cors = require('cors');
 const app = express();
 const port = process.env.PORT;
 
 app.use(express.json());
+app.use(cors());
 
 app.get('/', (req,res)=>{
     return res.send('Server Started');
