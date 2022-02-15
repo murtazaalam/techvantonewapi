@@ -3,7 +3,7 @@ const { body, validationResult } = require("express-validator");
 
 exports.loginValidator = [
     body("email").isEmail().withMessage("Invalid Email"),
-    body("password").isStrongPassword().withMessage("not an Password"),
+    body("password"),
     async(req, res, next) =>{
         let err = validationResult(req)
         err = err.array()
@@ -12,7 +12,7 @@ exports.loginValidator = [
     }
 ]
 exports.registerValidator = [
-    body("name").isAlpha().withMessage("Incorrect Name"),
+    body("name"),
     body("phone").isNumeric().withMessage("Incorrect Phone Number"),
     body("email").isEmail().withMessage("Invalid Email"),
     body("password").isStrongPassword().withMessage("Weak Password"),
