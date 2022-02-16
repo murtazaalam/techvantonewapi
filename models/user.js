@@ -13,8 +13,8 @@ const user = new Schema({
         required: true
     },
     phone:{
-        type: Number,
-        required: true,
+        type: String,
+        required: false,
         unique: false
     },
     password:{
