@@ -1,4 +1,4 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const courses = new Schema({});
-module.exports = mongoose.model("courses",courses);
+const techvanto_courses = new Schema({});
+module.exports = mongoose.model("techvanto_courses",techvanto_courses);
