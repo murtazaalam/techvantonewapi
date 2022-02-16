@@ -10,7 +10,7 @@ class EventService {
     }
     static async getEventById(id){
         try{
-            return await events.findOne(id);
+            return await events.findById(id);
         }catch(err){
             throw err;
         }
