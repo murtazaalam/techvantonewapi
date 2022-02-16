@@ -5,7 +5,7 @@ class EventController {
         res.send(data);
     }
     static async getEventById(req, res){
-        let data = await EventService.getEventById({_id:req.params.id})
+        let data = await EventService.getEventById({_id:req.params.id});
         res.send(data);
     }
 }
