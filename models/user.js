@@ -21,6 +21,21 @@ const user = new Schema({
         type: String,
         default: null,
         required: true
+    },
+    token:{
+        type: String,
+        required: false,
+        unique: false
+    },
+    createdBy:{
+        type: Object,
+        required: false,
+        unique: false
+    },
+    status:{
+        type: String,
+        required: false,
+        unique: false
     }
 })
 module.exports = mongoose.model("users",user);

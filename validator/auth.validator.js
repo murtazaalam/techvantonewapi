@@ -1,6 +1,5 @@
 const { body, validationResult } = require("express-validator");
 
-
 exports.loginValidator = [
     body("email").isEmail().withMessage("Invalid Email"),
     body("password"),

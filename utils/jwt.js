@@ -8,6 +8,25 @@ const jwtGenerator = (payload) => {
         console.log(err)
     }
 }
+const jwtSignGenerator = (payload) => {
+    try{
+        return jwt.sign(payload,process.env.JWT_SECRET);
+    }
+    catch(err){
+        console.log(err)
+    }
+}
+const jwtVerify = (token) => {
+    try{
+        let x = jwt.verify(token,process.env.JWT_SECRET)
+        return x;
+
+    }catch(err){
+        throw new Error(err);
+    }
+}
 module.exports = {
-    jwtGenerator
+    jwtGenerator,
+    jwtSignGenerator,
+    jwtVerify
 }
