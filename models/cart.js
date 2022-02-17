@@ -27,4 +27,4 @@
         required:false
     }
  })
- module.exports = mongoose.model("cart",cart)
+ module.exports = mongoose.model("carts",cart)

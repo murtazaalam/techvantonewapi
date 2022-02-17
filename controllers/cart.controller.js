@@ -15,7 +15,7 @@ class CartController {
         return res.status(201).json({message:"Item Added",item:newItem});
     }
     static async getFromCartByEmail(req, res){
-        let data = await CartService.getItemsByEmail({email:req.body.email})
+        let data = await CartService.getItemsByEmail({email:req.user.email})
         res.send(data);
     }
     static async removeFromCart(req, res){
