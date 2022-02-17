@@ -11,7 +11,7 @@ class OrderController{
             };
             let response = await generateOrder(options);
             let orderData = {
-                user_id:req.body.user_id,
+                user_id:req.user.email,
                 order_id:response.id,
                 total_amount:response.amount,
                 receipt_no: response.receipt,
@@ -30,8 +30,7 @@ class OrderController{
     }
     static async myOrder(req, res){
         try{
-            let data = await OrderService.baughtOrder({$and:[{user_id:req.body.email},{payment_status:"success"}]});
-            
+            let data = await OrderService.baughtOrder({$and:[{user_id:req.user.email},{payment_status:"success"}]});
             let orderItem = [];
             data.forEach(item => {
                 item.cart_item.forEach(cartItem => {
