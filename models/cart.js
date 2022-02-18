@@ -8,6 +8,12 @@
         default:null,
         required:false
     },
+    course_image:{
+        type:String,
+        unique:false,
+        default:null,
+        required:false
+    },
     course_id:{
         type:String,
         unique:false,
