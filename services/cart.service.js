@@ -10,7 +10,6 @@ class CartService{
         }
     }
     static async getItemsByEmail(email){
-        console.log(email);
         try{
             return await cart.find(email);
         }

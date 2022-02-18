@@ -25,7 +25,7 @@ class OrderController{
         }
     }
     static async verifyOrder(req, res){
-        await verifyOrder(req.body.razorpay_payment_id,req.body.order_id,req.body.email); 
+        await verifyOrder(req.body.razorpay_payment_id,req.body.order_id,req.user.email); 
         return res.status(200).json({message:"Payment Success"});
     }
     static async myOrder(req, res){

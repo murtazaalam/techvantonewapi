@@ -3,11 +3,10 @@ const CartService = require('../services/cart.service');
 class CartController {
     static async addToCart(req, res){
         let data = await CartService.getItemByEmailAndCourseId({email:req.user.email,course_id:req.body.course_id});
-        console.log(data);
         if(data.length > 0) return res.status(400).json({message:"Item Already Added"});
         let itemData = {
             course_name:req.body.course_name,
-            course_image:req.body.course_image,
+            course_image:req.body.thumbnail,
             course_id:req.body.course_id,
             price:req.body.price,
             email:req.user.email
