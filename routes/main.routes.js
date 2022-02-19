@@ -5,11 +5,13 @@ const OrderController = require('../controllers/orders.controller');
 const AuthValidator = require('../middleware/authValidator');
 const InterviewQuestionController = require('../controllers/interview.question.controller');
 const BlogController = require('../controllers/blog.controller');
+const StudentQueryController = require('../controllers/student.query.controller');
 
 const allRoutes = require('express').Router();
 
 allRoutes.get('/all-courses', CoursesController.getAllCourses);
 allRoutes.get('/all-courses/:id', CoursesController.getCourseById);
+allRoutes.get('/top-courses', CoursesController.getTopCourses);
 allRoutes.get('/all-events', EventController.getAllEvents);
 allRoutes.get('/all-events/:id', EventController.getEventById);
 allRoutes.post('/add-to-cart', AuthValidator.authValidate, CartController.addToCart);
@@ -21,5 +23,6 @@ allRoutes.get('/my-orders', AuthValidator.authValidate, OrderController.myOrder)
 allRoutes.get('/interview-questions', InterviewQuestionController.getInterviewQuestion);
 allRoutes.get('/blogs', BlogController.getAllBlogs);
 allRoutes.get('/blogs/:id', BlogController.getBlogById);
+allRoutes.post('/add-query', AuthValidator.queryAuthValidate, StudentQueryController.addStudentQuery);
 
 module.exports = allRoutes;

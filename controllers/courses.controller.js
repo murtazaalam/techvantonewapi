@@ -6,7 +6,11 @@ class CoursesController {
         res.send(data);
     }
     static async getCourseById(req, res){
-        let data = await CourseService.getCourseById({_id:req.params.id})
+        let data = await CourseService.getCourseById({_id:req.params.id});
+        res.send(data);
+    }
+    static async getTopCourses(req, res){
+        let data = await CourseService.getTopCourse();
         res.send(data);
     }
 }

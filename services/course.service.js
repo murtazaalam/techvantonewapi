@@ -16,5 +16,12 @@ class CourseService {
             throw err;
         }
     }
+    static async getTopCourse(){
+        try{
+            return await courses.find({is_top_course:'true'});
+        }catch(err){
+            throw err;
+        }
+    }
 }
 module.exports = CourseService;

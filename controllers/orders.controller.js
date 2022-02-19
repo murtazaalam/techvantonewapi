@@ -21,7 +21,6 @@ class OrderController{
             let newOrder = OrderService.addOrder(orderData);
             return res.status(201).json({message:"Order Added",order:newOrder,response});
         }catch(err){
-            console.log(err);
             return res.status(500).json({message:"Invalid Request",err:err});
         }
     }
