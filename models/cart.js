@@ -14,6 +14,36 @@
         default:null,
         required:false
     },
+    description:{
+        type:String,
+        unique:false,
+        default:null,
+        required:false
+    },
+    avg_rating:{
+        type:String,
+        unique:false,
+        default:null,
+        required:false
+    },
+    gradient:{
+        type:String,
+        unique:false,
+        default:null,
+        required:false
+    },
+    reviews:{
+        type:String,
+        unique:false,
+        default:null,
+        required:false
+    },
+    discount:{
+        type:String,
+        unique:false,
+        default:null,
+        required:false
+    },
     course_id:{
         type:String,
         unique:false,

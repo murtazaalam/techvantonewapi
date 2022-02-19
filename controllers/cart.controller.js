@@ -7,6 +7,11 @@ class CartController {
         let itemData = {
             course_name:req.body.course_name,
             course_image:req.body.thumbnail,
+            description:req.body.description,
+            avg_rating:req.body.avg_rating,
+            gradient:req.body.gradient,
+            reviews:req.body.reviews,
+            discount:req.body.discount,
             course_id:req.body.course_id,
             price:req.body.price,
             email:req.user.email
