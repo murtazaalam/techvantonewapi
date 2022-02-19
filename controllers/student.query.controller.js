@@ -20,7 +20,7 @@ class StudentQueryController{
                 }
             }
             let newQuery = StudentQueryService.addQuery(queryData);
-            return res.status(201).json({message:"Query Added",query:newQuery});
+            return res.status(201).json({message:"Query Sent",query:newQuery});
         }catch(err){
             return res.status(500).json({message:"Invalid Request",err})
         }

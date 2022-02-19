@@ -14,7 +14,11 @@ class AuthValidator {
         }
     }
     static async queryAuthValidate(req, res, next) {
-        if(req.headers.token){
+        console.log('yoken',req.headers.token);
+        if(req.headers.token === ""){
+            next();
+        }
+        else{
             try{
                 let payload = jwtVerify(req.headers.token);
                 let data = await UserService.getUserByToken({token:req.headers.token});
@@ -24,9 +28,6 @@ class AuthValidator {
             }catch(err){
                 return res.status(401).json({message:"Unauthorized"});
             }
-        }
-        else{
-            next();
         }
     }
 }
