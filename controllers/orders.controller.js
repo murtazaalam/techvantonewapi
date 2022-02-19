@@ -32,7 +32,6 @@ class OrderController{
     static async myOrder(req, res){
         try{
             let data = await OrderService.baughtOrder({$and:[{user_id:req.user.email},{payment_status:"success"}]});
-            console.log(data);
             let orderItem = [];
             data.forEach(item => {
                 item.cart_item.forEach(cartItem => {
