@@ -17,6 +17,7 @@ class AuthController {
         let data = await UserService.getUserByFilter({email:req.body.email});
         if(data) return res.status(400).json({message:"Email Already Taken"});
         let token = jwtSignGenerator(req.body.email);
+        console.log(data);
         let current = new Date();
         let registerDetails = {
             name: req.body.name,
