@@ -14,7 +14,6 @@ class AuthValidator {
         }
     }
     static async queryAuthValidate(req, res, next) {
-        console.log('yoken',req.headers.token);
         if(req.headers.token === ""){
             next();
         }

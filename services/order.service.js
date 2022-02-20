@@ -1,5 +1,4 @@
 const order = require('../models/order');
-
 class OrderService {
     static async addOrder(body){
         try{
@@ -25,7 +24,6 @@ class OrderService {
         }
     }
     static async baughtOrder(filter){
-        console.log(">>>",filter)
         try{
             return await order.find(filter)
         }

@@ -18,7 +18,7 @@ class CourseService {
     }
     static async getTopCourse(){
         try{
-            return await courses.find({is_top_course:'true'});
+            return await courses.find({is_top_course:'true'}).limit(4);
         }catch(err){
             throw err;
         }
