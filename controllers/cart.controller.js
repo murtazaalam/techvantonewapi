@@ -6,7 +6,7 @@ class CartController {
         if(data.length > 0) return res.status(400).json({message:"Item Already Added"});
         let itemData = {
             course_name:req.body.course_name,
-            course_image:req.body.thumbnail,
+            course_image:req.body.course_image,
             description:req.body.description,
             avg_rating:req.body.avg_rating,
             gradient:req.body.gradient,
