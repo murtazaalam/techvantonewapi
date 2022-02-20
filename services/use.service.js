@@ -10,7 +10,7 @@ class UserService {
     }
     static async updateToken(data){
         return await user.updateOne(
-            {id:data._id},
+            {_id:data._id},
             {
                 $set:{
                     "token":data.token

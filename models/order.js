@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const orders = new Schema({
-    user_id:{
+    user_id:{ 
         type:String,
         unique:false,
         default:null,
@@ -33,6 +33,12 @@ const orders = new Schema({
         required:false
     },
     receipt_no:{
+        type:String,
+        unique:false,
+        default:null,
+        required:false
+    },
+    payment_status:{
         type:String,
         unique:false,
         default:null,

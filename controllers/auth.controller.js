@@ -9,6 +9,7 @@ class AuthController {
         const passIsValid = bcrypt.compareSync(req.body.password, data.password);
         if(!passIsValid) return res.status(400).json({message:"Incorrect Password"});
         let token = jwtGenerator({_id: data._id});
+        console.log(data);
         await UserService.updateToken({_id:data._id,token});
         res.status(200).json({message:"Login Success", token});
     }
