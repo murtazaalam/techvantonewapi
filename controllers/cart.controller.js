@@ -17,6 +17,7 @@ class CartController {
             email:req.user.email
         }
         let newItem = await CartService.addItem(itemData);
+        console.log(newItem);
         return res.status(201).json({message:"Item Added",item:newItem});
     }
     static async getFromCartByEmail(req, res){
