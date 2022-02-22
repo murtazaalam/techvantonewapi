@@ -1,0 +1,2 @@
+PORT = 6000
+MONGO_URL = mongodb+srv://techvanto_admin:Techvanto123@cluster0.j8sbu.mongodb.net/edutech?retryWrites=true&w=majority
